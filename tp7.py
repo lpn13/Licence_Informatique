@@ -29,7 +29,7 @@ def fill_ram_random(ram, N):
 def fill_ram_place(ram, N):
 
     index = random.sample(range(len(ram)), N)
-
+ 
     for i in range(len(index)):
         ram[index[i]] = index[i]
    
