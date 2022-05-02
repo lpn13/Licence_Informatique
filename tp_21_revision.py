@@ -1,5 +1,3 @@
-import random
-
 def pair_impair(liste):
 
     pair = list(filter(lambda x: x % 2 == 0, liste))
