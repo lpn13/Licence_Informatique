@@ -7,7 +7,6 @@ import random
 #=== Question 1 : ===#
 # Retourne une liste de taille N où tous les éléments sont nuls.
 def init_ram_list(N):
-
     return [0] * N
 
 #=== Question 2 : ===#
@@ -38,7 +37,6 @@ def fill_ram_place(ram, N):
 #=== Question 4 : ===#
 # Retourne la valeur en mémoire placée à l'adresse donnée.
 def get_value_list(ram, adresse):
-
    return ram[adresse]
 
 #==============================================#
@@ -48,7 +46,6 @@ def get_value_list(ram, adresse):
 #=== Question 1 : ===#
 # Retourne un dictionnaire contenant uniquement un élément dont la clé est 'taille' initialisée à N.
 def init_ram_dict(N):
-
     return {"taille" : N}
 
 #=== Question 2 : ===#
@@ -144,19 +141,15 @@ def in_cache_direct_mapped(mem_class, adresse):
 
    if adresse > len(mem_class):
       R = get_value(mem_class, len(mem_class)-1)
-
       if R["ok"] == True:
          return ("Hit", R["data"])
-
       else:
          return ("Miss", None)
 
    else:
       R = get_value(mem_class, adresse)
-
       if R["ok"] == True:
          return ("Hit", R["data"])
-
       else:
          return ("Miss", None)
 
@@ -246,9 +239,10 @@ def update_lru(pile, value):
     
     while none_index < len(pile) and pile[none_index] != None:
         none_index += 1
+        
     none_index -= 1
-
     index = 0
+    
     while pile[index] != value:
         index += 1
 
