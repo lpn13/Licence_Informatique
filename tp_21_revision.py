@@ -21,11 +21,11 @@ def pair_impair(list1, list2):
     list_pair = sorted(pair1 + pair2)
     list_impair = sorted(impair1 + impair2)
 
-    print( "Nombres pairs :", list_pair)
-    print("Nombres impair :", list_impair)
+    print("Nombres pairs :", list_pair)
+    print("Nombres impairs :", list_impair)
 
-# liste_int1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] 
-# liste_int2 = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+# liste_int1 = rand_list(10) 
+# liste_int2 = rand_list(10)
 
 # print("Liste d'entiers :", liste_int1 + liste_int2)
 # pair_impair(liste_int1, liste_int2)
@@ -43,7 +43,7 @@ def maxi(liste):
 
     return maxi
 
-# Liste_int = [-5, 6, 12, -34, 9, 987]
+# Liste_int = sorted(rand_list(10))
 # print("Liste :", Liste_int)
 # print("Max :", maxi(Liste_int))
 
@@ -79,3 +79,4 @@ def anagrammes(liste):
 # mot = "eegks"
 # liste_str = ["geeks", "geeg", "keegs", "practice", "aa"]
 # anagrammes(liste_str)
+
