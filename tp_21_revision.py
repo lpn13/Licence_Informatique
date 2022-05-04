@@ -1,12 +1,14 @@
 import random
+import itertools
 import collections
+import ast
 
 #====================================================#
 
 def rand_list(n):
     return random.sample(range(-10, 10), n)
 
-# print(rand_list(10))
+# print("Liste aléatoire :", rand_list(10))
 
 #====================================================#
 
@@ -49,18 +51,39 @@ def maxi(liste):
 
 #====================================================#
 
-def concatain_list(l1, l2):
-    return sorted(l1+l2)
+def concatain_list():
+    
+    global liste_int1
+    global liste_int2
 
-# liste1, liste2 = [1, 3, 5, 9, 2, 6], [4, 7, 8, 10]
-# print(concatain_list(liste1, liste2))
+    result1 = [*liste_int1, *liste_int2]
+    print("Exemple 1 :", result1)
+
+    result2 = list(itertools.chain(liste_int1, liste_int2))
+    print("Exemple 2 :", result2)
+    
+    result3 = [element for liste in [liste_int1, liste_int2] for element in liste]
+    print("Exemple 3 :", result3)
+    
+    global liste_str1
+    global liste_str2
+
+    # s'applique uniquement à une liste de str
+    # concataine l'index[i] de la liste1 a l'indexe[j] de la liste2 et incrémente i et j 
+    result4 = [i + j for i, j in zip(liste_str1, liste_str2)]
+    rep = [result4[i] for i in range(len(result4))]
+    print("Exemple 4 :", ", ".join(map(str, rep)))
+    
+liste_int1, liste_int2 = [1, 3, 5, 9, 2, 6], [4, 7, 8, 10]
+liste_str1, liste_str2 = ["maison ", "chateau-"], ["rouge", "fort"]
+concatain_list()
 
 #====================================================#
 
 def palindromes(liste):
 
     result = list(filter(lambda x: x == "".join(reversed(x)), liste))
-
+    
     print("Palindrome(s) :", ", ".join(map(str, result)))
 
 # liste_str = ["geeks", "geeg", "keegs", "practice", "aa"]
@@ -80,3 +103,12 @@ def anagrammes(liste):
 # liste_str = ["geeks", "geeg", "keegs", "practice", "aa"]
 # anagrammes(liste_str)
 
+#====================================================#
+
+def point_fixe(liste):
+
+    return [ast.Index(liste[i]) for i in range(len(liste)) if i == ast.Index(liste[i])]     
+
+# liste_int = [2, 3, 4, 1]
+# print("Liste d'entiers :", liste_int)
+# print("Point(s) fixe(s):", ", ".join(map(str, point_fixe(liste_int))))
