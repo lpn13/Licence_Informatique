@@ -22,9 +22,7 @@ def pair_impair(list1, list2):
     print("Nombres pairs :", list_pair)
     print("Nombres impairs :", list_impair)
 
-# liste_int1 = rand_list(10) 
-# liste_int2 = rand_list(10)
-
+# liste_int1, liste_int2 = rand_list(10), rand_list(10)
 # print("Liste d'entiers :", liste_int1 + liste_int2)
 # pair_impair(liste_int1, liste_int2)
 
@@ -132,7 +130,6 @@ def major(liste):
 
 # if major(liste) != -1:
 #     print("Elément majoritaire :", major(liste))
-
 # else: 
 #     print("Elément majoritaire inferieur à la moitier de la taille de la liste :", major(liste))
 
