@@ -66,7 +66,7 @@ def concatain_list():
     global liste_str2
 
     # s'applique uniquement à une liste de str
-    # concataine l'index[i] de la liste1 à l'indexe[j] de la liste2 et incrémente i et j 
+    # concataine l'index[i] de la liste1 a l'indexe[j] de la liste2 et incrémente i et j 
     result4 = [i + j for i, j in zip(liste_str1, liste_str2)]
     rep = [result4[i] for i in range(len(result4))]
     print("Exemple 4 :", ", ".join(map(str, rep)))
@@ -106,6 +106,7 @@ import ast
 
 def point_fixe(liste):
 
+    # 
     return [ast.Index(liste[i]) for i in range(len(liste)) if i == ast.Index(liste[i])]     
 
 
@@ -118,7 +119,7 @@ import collections
 
 def major(liste):
     
-    # {"keys" : values, ...} | keys -> éléments de la liste | values -> nombre de fois qu'il est présent dans la liste
+    # {"keys" : values, ...} | keys -> elements de la liste | values -> nombre de fois qu'il est present dans la liste
     dico = collections.Counter(liste)
     
     # recupere le max des values du dictionaire
@@ -127,21 +128,27 @@ def major(liste):
     return el_max if el_max > (len(liste)/2) else -1
 
 # liste = [1, 2, 1, 1, 1, 1, 3, 1, 1, 2, 1, 2, 3, 3, 1, 2, 0, 0]
-# print(major(liste))
+# print("Liste :", liste)
+
+# if major(liste) != -1:
+#     print("Elément majoritaire :", major(liste))
+
+# else: 
+#     print("Elément majoritaire inferieur à la moitier de la taille de la liste :", major(liste))
 
 #====================================================#
 import numpy as np
 
 def iteree(liste, k):
 
-    # décale la liste de k elements vers la droite
+    # decale la liste de k elements vers la droite
     decal_list = np.roll(liste, k)
-    
-    # transtype decal_list en lite
+
     return list(map(int, decal_list))
  
 # liste_int = [1,2,3,4,5]
-# print(liste_int)
-# print(iteree(liste_int, 3))
+# decalage = 3
+# print("Liste d'entiers :", liste_int)
+# print("Liste décalées de {} éléments :".format(decalage), iteree(liste_int, decalage))
 
 #====================================================#
