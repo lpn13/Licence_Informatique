@@ -1,9 +1,5 @@
-import random
-import itertools
-import collections
-import ast
-
 #====================================================#
+import random
 
 def rand_list(n):
     return random.sample(range(-10, 10), n)
@@ -50,6 +46,7 @@ def maxi(liste):
 # print("Max :", maxi(Liste_int))
 
 #====================================================#
+import itertools
 
 def concatain_list():
     
@@ -74,9 +71,9 @@ def concatain_list():
     rep = [result4[i] for i in range(len(result4))]
     print("Exemple 4 :", ", ".join(map(str, rep)))
     
-liste_int1, liste_int2 = [1, 3, 5, 9, 2, 6], [4, 7, 8, 10]
-liste_str1, liste_str2 = ["maison ", "chateau-"], ["rouge", "fort"]
-concatain_list()
+# liste_int1, liste_int2 = [1, 3, 5, 9, 2, 6], [4, 7, 8, 10]
+# liste_str1, liste_str2 = ["maison ", "chateau-"], ["rouge", "fort"]
+# concatain_list()
 
 #====================================================#
 
@@ -91,6 +88,7 @@ def palindromes(liste):
 # palindromes(liste_str)
 
 #====================================================#
+import collections
 
 def anagrammes(liste):
 
@@ -104,11 +102,45 @@ def anagrammes(liste):
 # anagrammes(liste_str)
 
 #====================================================#
+import ast
 
 def point_fixe(liste):
 
     return [ast.Index(liste[i]) for i in range(len(liste)) if i == ast.Index(liste[i])]     
 
-# liste_int = [2, 3, 4, 1]
+
+# liste_int = [2, 3, 4, 3]
 # print("Liste d'entiers :", liste_int)
 # print("Point(s) fixe(s):", ", ".join(map(str, point_fixe(liste_int))))
+
+#====================================================#
+import collections
+
+def major(liste):
+    
+    # {"keys" : values, ...} | keys -> elements de la liste | values -> nombre de fois qu'il est present dans la liste
+    dico = collections.Counter(liste)
+    
+    # recupere le max des values du dictionaire
+    el_max = max(dico.values())
+
+    return el_max if el_max > (len(liste)/2) else -1
+
+# liste = [1, 2, 1, 1, 1, 1, 3, 1, 1, 2, 1, 2, 3, 3, 1, 2, 0, 0]
+# print(major(liste))
+
+#====================================================#
+import numpy as np
+
+def iteree(liste, k):
+
+    # decale la liste de k elements vers la droite
+    decal_list = np.roll(liste, k)
+
+    return list(map(int, decal_list))
+ 
+# liste_int = [1,2,3,4,5]
+# print(liste_int)
+# print(iteree(liste_int, 3))
+
+#====================================================#
