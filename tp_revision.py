@@ -149,3 +149,51 @@ def iteree(liste, k):
 # print("Liste décalées de {} éléments :".format(decalage), iteree(liste_int, decalage))
 
 #====================================================#
+
+def div(nb):
+
+    flag = 0
+
+    for i in nb:
+        for j in range(2, ceil(sqrt(i/2))+1):
+            print(i)
+            
+            # verifie si 'i' a des diviseurs
+            if i % j == 0:
+                flag = 1
+
+            # verifie si 'i' est premier
+            if flag == 0:
+                print("est premier")
+                flag = 1
+
+            else:
+                print("pas premier")
+                flag = 0
+
+# liste = [6, 5, 2, 0, 9, 4, 3, 1, 7, 8]
+# print(liste)
+# div(liste)
+
+#====================================================#
+
+def parcours_matrice(M):
+
+    """
+    return [M[i][j] for i in range(len(M)) for j in range(len(M[0]))]
+    """
+    
+    t_lig = len(M)
+    t_col = len(M[0])
+    res = []
+
+    for i in range(t_lig):
+        for j in range(t_col):
+            res += [M[i][j]]
+
+    return res
+
+# matrice = [[0,1],
+#            [4,5],
+#            [7,8]]
+# print(parcours_matrice1(matrice))
